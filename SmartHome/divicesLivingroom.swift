@@ -9,21 +9,32 @@ import SwiftUI
 
 struct divicesLivingroom: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 20){
-            Text("Smart Divices")
-                .fontWeight(.regular)
-                .font(.system(size: 20))
-                .padding(.vertical, 25)
-                VStack (spacing: 35){
-                    HStack(spacing: 35){
-                        lightsL()
-                        socketsL()
+        ZStack {
+            Color.black.opacity(0.06)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center, spacing: 30) {
+                Text("Living Room")
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                VStack(alignment: .leading, spacing: 20){
+                Text("Smart Divices")
+                    .fontWeight(.regular)
+                    .font(.system(size: 20))
+                    .padding(.vertical, 25)
+                    VStack (spacing: 35){
+                        HStack(spacing: 35){
+                            lightsL()
+                            socketsL()
+                        }
+                        HStack(spacing: 35){
+                            speakersL()
+                            fanL()
+                        }
                     }
-                    HStack(spacing: 35){
-                        speakersL()
-                        fanL()
-                    }
+                Spacer()
                 }
+            }
         }
     }
 }
@@ -36,7 +47,7 @@ struct divicesLivingroom_Previews: PreviewProvider {
 
 //SMART DIVICES
 struct lightsL: View {
-   // @State var sw : Bool = false
+    @State var sheetLL : Bool = false
     @AppStorage("lightSwL") var lightSwL: Bool = false
  
     var body: some View {
@@ -53,8 +64,12 @@ struct lightsL: View {
                     Image(lightSwL ? "lightB" : "light")
                         .resizable()
                         .frame(width: 39, height: 43)
-                    Text("Smart \nLight")
-                        .fontWeight(.semibold)
+                    Button(action: {
+                        sheetLL.toggle()
+                    }) {
+                        Text("Smart \nLight")
+                            .fontWeight(.semibold)
+                    }
                 }
                 Toggle(isOn: $lightSwL) {
                     
@@ -63,12 +78,24 @@ struct lightsL: View {
             }
             .padding(.horizontal, 10)
             .foregroundColor(lightSwL ? .white : .black)
+            .sheet(isPresented: $sheetLL) {
+                ZStack {
+                    Color.black.opacity(0.06)
+                        .edgesIgnoringSafeArea(.all)
+                    VStack(alignment:.center, spacing: 80 ) {
+                        Text("Smart Light")
+                            .font(.title)
+                            .bold()
+                        // divicesKitchen()
+                    }
+                }
+            }
         }.frame(width: 140, height: 180, alignment: .leading)
         
     }
 }
 struct socketsL: View {
-   // @State var sw : Bool = false
+    @State var sheetSL : Bool = false
     @AppStorage("socketSwL") var socketSwL: Bool = false
     var body: some View {
         
@@ -85,8 +112,12 @@ struct socketsL: View {
                         .resizable()
                         .frame(width: 39, height: 43)
                     
-                    Text("Smart \nSocket")
-                        .fontWeight(.semibold)
+                    Button(action: {
+                        sheetSL.toggle()
+                    }) {
+                        Text("Smart \nSocket")
+                            .fontWeight(.semibold)
+                    }
                 }
                 Toggle(isOn: $socketSwL) {
                     
@@ -95,12 +126,24 @@ struct socketsL: View {
             }
             .padding(.horizontal, 10)
             .foregroundColor(socketSwL ? .white : .black)
+            .sheet(isPresented: $sheetSL) {
+                ZStack {
+                    Color.black.opacity(0.06)
+                        .edgesIgnoringSafeArea(.all)
+                    VStack(alignment:.center, spacing: 80 ) {
+                        Text("Smart Socket")
+                            .font(.title)
+                            .bold()
+                        // divicesKitchen()
+                    }
+                }
+            }
         }.frame(width: 140, height: 180, alignment: .leading)
         
     }
 }
 struct speakersL: View {
-   // @State var sw : Bool = false
+    @State var sheetSpL : Bool = false
     @AppStorage("lspeakerSwL") var speakerSwL: Bool = false
     var body: some View {
         ZStack{
@@ -113,8 +156,12 @@ struct speakersL: View {
                     Image(speakerSwL ? "speakerB" : "speaker")
                         .resizable()
                         .frame(width: 39, height: 43)
-                    Text("Smart \nSpeaker")
-                        .fontWeight(.semibold)
+                    Button(action: {
+                        sheetSpL.toggle()
+                    }) {
+                        Text("Smart \nSpeaker")
+                            .fontWeight(.semibold)
+                    }
                 }
                 Toggle(isOn: $speakerSwL) {
                     
@@ -123,12 +170,24 @@ struct speakersL: View {
             }
             .padding(.horizontal, 5)
             .foregroundColor(speakerSwL ? .white : .black)
+            .sheet(isPresented: $sheetSpL) {
+                ZStack {
+                    Color.black.opacity(0.06)
+                        .edgesIgnoringSafeArea(.all)
+                    VStack(alignment:.center, spacing: 80 ) {
+                        Text("Smart Speaker")
+                            .font(.title)
+                            .bold()
+                        // divicesKitchen()
+                    }
+                }
+            }
         }.frame(width: 140, height: 180, alignment: .leading)
     }
 }
 
 struct fanL: View {
-   // @State var sw : Bool = false
+    @State var sheetFL : Bool = false
     @AppStorage("fanSwL") var fanSwL: Bool = false
     var body: some View {
         ZStack{
@@ -141,8 +200,12 @@ struct fanL: View {
                     Image(fanSwL ? "ventiladorB" : "ventilador")
                         .resizable()
                         .frame(width: 39, height: 43)
-                    Text("Smart \nFan")
-                        .fontWeight(.semibold)
+                    Button(action: {
+                        sheetFL.toggle()
+                    }) {
+                        Text("Smart \nFan")
+                            .fontWeight(.semibold)
+                    }
                 }
                 Toggle(isOn: $fanSwL) {
                     
@@ -151,6 +214,18 @@ struct fanL: View {
             }
             .padding(.horizontal, 5)
             .foregroundColor(fanSwL ? .white : .black)
+            .sheet(isPresented: $sheetFL) {
+                ZStack {
+                    Color.black.opacity(0.06)
+                        .edgesIgnoringSafeArea(.all)
+                    VStack(alignment:.center, spacing: 80 ) {
+                        Text("Smart Fan")
+                            .font(.title)
+                            .bold()
+                        // divicesKitchen()
+                    }
+                }
+            }
         }.frame(width: 140, height: 180, alignment: .leading)
     }
 }

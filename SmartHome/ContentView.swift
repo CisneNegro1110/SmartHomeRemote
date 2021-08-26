@@ -9,24 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
-            ScrollView{
-                top()
-                VStack (spacing: 35){
-                    HStack(spacing: 35){
-                        bedroom()
-                        diningRoom()
+        NavigationView {
+            VStack{
+                ScrollView{
+                    top()
+                    VStack (spacing: 35){
+                        HStack(spacing: 35){
+                            bedroom()
+                            diningRoom()
+                        }
+                        HStack(spacing: 35){
+                            livingRoom()
+                            kitchen()
+                        }
                     }
-                    HStack(spacing: 35){
-                        livingRoom()
-                        kitchen()
-                    }
+                    Spacer()
                 }
-                Spacer()
             }
+            .background(Color.black.opacity(0.06))
+            .ignoresSafeArea(.all)
         }
-        .background(Color.black.opacity(0.06))
-        .ignoresSafeArea(.all)
     }
 }
 
@@ -92,12 +94,15 @@ struct bedroom: View {
     @State var sw :Bool = false
     var body: some View {
         ZStack{
+            
             Rectangle()
                 .frame(width: 150, height: 200)
                 .cornerRadius(30)
                 .foregroundColor(.white)
+            NavigationLink("", destination: divicesBedroom(), isActive: $sw)
             Button(action: {
                 sw.toggle()
+                
             }) {
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading, spacing: 40){
@@ -108,22 +113,11 @@ struct bedroom: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
                     }
+                    
                 }
             }
             .padding(.horizontal, 10)
-            .sheet(isPresented: $sw) {
-                ZStack {
-                    Color.black.opacity(0.06)
-                        .edgesIgnoringSafeArea(.all)
-                    VStack(alignment:.center, spacing: 80 ) {
-                        Text("Bed Room")
-                            .font(.title)
-                            .bold()
-                        divicesBedroom()
-                       
-                    }
-                }
-            }
+            
         }.frame(width: 140, height: 180, alignment: .leading)
     }
     
@@ -137,6 +131,7 @@ struct livingRoom: View {
                 .frame(width: 150, height: 200)
                 .cornerRadius(30)
                 .foregroundColor(.white)
+            NavigationLink("", destination: divicesLivingroom(), isActive: $sw)
             Button(action: {
                 sw.toggle()
             }) {
@@ -152,19 +147,7 @@ struct livingRoom: View {
                 }
             }
             .padding(.horizontal, 10)
-            .sheet(isPresented: $sw) {
-                ZStack {
-                    Color.black.opacity(0.06)
-                        .edgesIgnoringSafeArea(.all)
-                    VStack(alignment:.center, spacing: 80 ) {
-                        Text("Living Room")
-                            .font(.title)
-                            .bold()
-                        divicesLivingroom()
-                        
-                    }
-                }
-            }
+ 
         }.frame(width: 140, height: 180, alignment: .leading)
         
     }
@@ -179,6 +162,7 @@ struct diningRoom: View {
                 .frame(width: 150, height: 200)
                 .cornerRadius(30)
                 .foregroundColor(.white)
+            NavigationLink("", destination: divicesDiningroom(), isActive: $sw)
             Button(action: {
                 sw.toggle()
             }) {
@@ -194,20 +178,7 @@ struct diningRoom: View {
                 }
             }
             .padding(.horizontal, 10)
-            .sheet(isPresented: $sw) {
-                ZStack {
-                    Color.black.opacity(0.06)
-                        .edgesIgnoringSafeArea(.all)
-                    VStack (alignment:.center, spacing: 80 ){
-                        Text("Dining Room")
-                            .font(.title)
-                            .bold()
-                            
-                        divicesDiningroom()
-                       
-                    }
-                }
-            }
+       
         }.frame(width: 140, height: 180, alignment: .leading)
     }
    
@@ -225,6 +196,7 @@ struct kitchen: View {
                 .frame(width: 150, height: 200)
                 .cornerRadius(30)
                 .foregroundColor(.white)
+            NavigationLink("", destination: divicesKitchen(), isActive: $sw)
             Button(action: {
                 sw.toggle()
             }) {
@@ -242,18 +214,7 @@ struct kitchen: View {
                 }
             }
             .padding(.horizontal, 10)
-            .sheet(isPresented: $sw) {
-                ZStack {
-                    Color.black.opacity(0.06)
-                        .edgesIgnoringSafeArea(.all)
-                    VStack(alignment:.center, spacing: 80 ) {
-                        Text("Kitchen")
-                            .font(.title)
-                            .bold()
-                        divicesKitchen()
-                    }
-                }
-            }
+
         }.frame(width: 140, height: 180, alignment: .leading)
     }
 }
