@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613CFB0226D966D5002A1498 /* smartSocketK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CFB0126D966D5002A1498 /* smartSocketK.swift */; };
+		613CFB0626D96A1B002A1498 /* smartLightB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CFB0526D96A1B002A1498 /* smartLightB.swift */; };
+		613CFB0A26D96B37002A1498 /* smartLightD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CFB0926D96B37002A1498 /* smartLightD.swift */; };
+		613CFB0E26D96B44002A1498 /* smartLightL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CFB0D26D96B44002A1498 /* smartLightL.swift */; };
+		613D2E2326D88723006490A5 /* smartLightK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D2E2226D88723006490A5 /* smartLightK.swift */; };
 		61474DEE2696847200E89E51 /* SmartHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61474DED2696847200E89E51 /* SmartHomeApp.swift */; };
 		61474DF02696847200E89E51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61474DEF2696847200E89E51 /* ContentView.swift */; };
 		61474DF22696847500E89E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61474DF12696847500E89E51 /* Assets.xcassets */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		613CFB0126D966D5002A1498 /* smartSocketK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartSocketK.swift; sourceTree = "<group>"; };
+		613CFB0526D96A1B002A1498 /* smartLightB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartLightB.swift; sourceTree = "<group>"; };
+		613CFB0926D96B37002A1498 /* smartLightD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartLightD.swift; sourceTree = "<group>"; };
+		613CFB0D26D96B44002A1498 /* smartLightL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartLightL.swift; sourceTree = "<group>"; };
+		613D2E2226D88723006490A5 /* smartLightK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smartLightK.swift; sourceTree = "<group>"; };
 		61474DEA2696847200E89E51 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61474DED2696847200E89E51 /* SmartHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeApp.swift; sourceTree = "<group>"; };
 		61474DEF2696847200E89E51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +51,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		613D2E2526D8877D006490A5 /* divices */ = {
+			isa = PBXGroup;
+			children = (
+				617AF15C26D7D28E0004B568 /* divicesDiningroom.swift */,
+				617AF16026D7F2E90004B568 /* divicesKitchen.swift */,
+				617AF16326D7F4630004B568 /* divicesBedroom.swift */,
+				617AF16626D7F5280004B568 /* divicesLivingroom.swift */,
+			);
+			path = divices;
+			sourceTree = "<group>";
+		};
+		613D2E2626D887B1006490A5 /* smart */ = {
+			isa = PBXGroup;
+			children = (
+				613CFB0126D966D5002A1498 /* smartSocketK.swift */,
+				613D2E2226D88723006490A5 /* smartLightK.swift */,
+				613CFB0526D96A1B002A1498 /* smartLightB.swift */,
+				613CFB0926D96B37002A1498 /* smartLightD.swift */,
+				613CFB0D26D96B44002A1498 /* smartLightL.swift */,
+			);
+			path = smart;
+			sourceTree = "<group>";
+		};
 		61474DE12696847200E89E51 = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +95,8 @@
 			children = (
 				61474DED2696847200E89E51 /* SmartHomeApp.swift */,
 				61474DEF2696847200E89E51 /* ContentView.swift */,
-				617AF15C26D7D28E0004B568 /* divicesDiningroom.swift */,
-				617AF16626D7F5280004B568 /* divicesLivingroom.swift */,
-				617AF16326D7F4630004B568 /* divicesBedroom.swift */,
-				617AF16026D7F2E90004B568 /* divicesKitchen.swift */,
+				613D2E2526D8877D006490A5 /* divices */,
+				613D2E2626D887B1006490A5 /* smart */,
 				61474DF12696847500E89E51 /* Assets.xcassets */,
 				61474DF62696847500E89E51 /* Info.plist */,
 				61474DF32696847500E89E51 /* Preview Content */,
@@ -150,12 +181,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				613CFB0626D96A1B002A1498 /* smartLightB.swift in Sources */,
+				613CFB0226D966D5002A1498 /* smartSocketK.swift in Sources */,
 				617AF16126D7F2E90004B568 /* divicesKitchen.swift in Sources */,
 				617AF16726D7F5280004B568 /* divicesLivingroom.swift in Sources */,
 				61474DF02696847200E89E51 /* ContentView.swift in Sources */,
+				613D2E2326D88723006490A5 /* smartLightK.swift in Sources */,
 				61474DEE2696847200E89E51 /* SmartHomeApp.swift in Sources */,
 				617AF16426D7F4630004B568 /* divicesBedroom.swift in Sources */,
+				613CFB0E26D96B44002A1498 /* smartLightL.swift in Sources */,
 				617AF15D26D7D28E0004B568 /* divicesDiningroom.swift in Sources */,
+				613CFB0A26D96B37002A1498 /* smartLightD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
